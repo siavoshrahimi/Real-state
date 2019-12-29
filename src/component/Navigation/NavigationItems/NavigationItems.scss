@@ -1,0 +1,33 @@
+.navigation-items{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all .2s linear;
+  background: #fff;
+  padding: 10px;
+}
+.fix{
+  position: relative;
+}
+
+
+@media (min-width: 500px){
+  .navigation-items{
+    width: 100%;
+    flex-direction: row;
+    padding: 0;
+    background-color: #fff;
+
+  }
+  .fix{
+    position: fixed;
+    left: 0;
+    top:50px;
+    justify-content: space-around;
+    box-shadow: 0 1px 3px #eee;
+    height: 100px;
+    margin-top: -50px;
+    align-items: center;
+    background: #fff;
+  }
+}

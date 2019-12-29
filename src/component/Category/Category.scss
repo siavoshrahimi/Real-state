@@ -1,0 +1,33 @@
+@import "../../assest/styles/variable";
+.category{
+  position: relative;
+  margin:20px 0;
+  img{
+    width: 100%;
+  }
+  .detail{
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    background: rgba(0,0,0,0.5);
+    width: 100%;
+    padding: 10px;
+    transition: all .2s linear;
+    h2{
+      margin: 5px 0;
+    }
+  }
+  &:hover > .detail{
+    background:$base-color2 ;
+  }
+}
+@media (min-width:500px) {
+  .category{
+    margin:40px 0;
+    .detail{
+      h2{
+        margin:15px 0;
+      }
+    }
+  }
+}

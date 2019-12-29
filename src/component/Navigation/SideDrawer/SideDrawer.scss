@@ -1,0 +1,18 @@
+.side-drawer{
+  position: fixed;
+  width: 280px;
+  z-index: 10;
+  transition: transform .3s linear;
+}
+.open{
+  transform: translateX(0);
+}
+.close{
+  transform: translateX(-300px);
+}
+
+@media (min-width: 500px) {
+  .side-drawer{
+    display: none;
+  }
+}

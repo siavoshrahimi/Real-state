@@ -1,0 +1,123 @@
+@import "../../../assest/styles/variable";
+
+.property{
+  box-shadow: 0 0 4px #443f3f;
+  width: 100%;
+  margin: 20px 0;
+  figure{
+    margin:0;
+    img{
+      width: 100%;
+    }
+  }
+  .property-img{
+    position: relative;
+    .detail-on-img{
+      position: absolute;
+      bottom: 2px;
+      display: flex;
+      flex-direction: column;
+      background: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      color: #fff;
+      padding: 10px 15px;
+      span:first-child {
+        font-size: 25px;
+        color: $base-color2;
+        margin-bottom: 5px;
+      }
+      span:last-child{
+        display: flex;
+        align-items: center;
+        font-size: 17px;
+        svg{
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
+  .detail{
+    .direction {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 20px;
+      border-bottom: 1px solid #eee;
+      align-items: center;
+    }
+    span svg{
+      margin-right: 5px;
+    }
+    > span{
+      margin-bottom: 14px;
+    }
+    &:last-child span{
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+    }
+    h2{
+      color: #7c7c7c;
+      font-size: 30px;
+      font-weight: 600;
+      margin: 0;
+    }
+    .detail-icon{
+      display: flex;
+      padding: 10px 20px;
+      justify-content: space-between;
+      .middle{
+        &:after{
+          content: "|";
+          display: inline-block;
+          margin-left: 25px;
+          color: $base-color1;
+        }
+        &:before{
+          content: "|";
+          display: inline-block;
+          margin-right: 25px;
+          color: $base-color1;
+        }
+      }
+      span{
+        display: flex;
+        align-items: center;
+        color: #939393;;
+        font-size: 22px;
+        svg{
+          font-size: 30px;
+        }
+      }
+    }
+    .location {
+      cursor: pointer;
+      color: #c2c2c2;
+      svg{
+        margin-right: 0;
+      }
+      &:hover{
+        color: #EF5A00;
+      }
+    }
+  }
+}
+
+
+@media (min-width: 500px) {
+  .property{
+    width: 28%;
+    margin: 0 30px 40px 30px;
+    figure{
+      overflow: hidden;
+      img{
+        transform: scale(1);
+        transition: .3s ease-in-out;
+      }
+      &:hover > img{
+        transform: scale(1.3);
+      }
+    }
+
+  }
+}

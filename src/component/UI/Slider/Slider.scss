@@ -1,0 +1,80 @@
+@import "../../../assest/styles/variable";
+.slider{
+  .show{
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+  }
+  position: relative;
+  img{
+    width: 100%;
+    height: 250px;
+  }
+  .detail{
+    transform: translateY(-200px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s linear;
+    position: absolute;
+    top: 3%;
+    left: 10%;
+    background: rgba(0,0,0,0.4);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    h1{
+      margin:0;
+    }
+
+    .caption{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      margin-top: 20px;
+      height: 115px;
+    }
+    p{
+      display: none;
+      font-size: 13px;
+      margin: 3px;
+    }
+    span > *,span{
+      color: $base-color1 !important;
+    }
+    strong{
+      font-size: 25px;
+    }
+    * {
+      color: #fff;
+    }
+  }
+}
+
+
+
+@media (min-width: 500px) {
+  .slider{
+    img{
+      height: 500px;
+    }
+    .detail{
+      left: 10%;
+      top: 15%;
+      width: 350px;
+      h1{
+        margin: 0.67rem;
+      }
+      p{
+        display: block;
+        margin: 1em;
+      }
+      .caption{
+        flex-direction: row;
+        justify-content: space-between;
+        height: auto;
+      }
+    }
+  }
+}

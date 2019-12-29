@@ -1,0 +1,35 @@
+@import "../../../assest/styles/variable";
+.btn{
+  outline: none;
+  border: none;
+  color: #fff;
+  height: 50px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+
+}
+.btn-primary{
+  background: $base-color2;
+  width: 150px;
+  &:hover{
+    background: $base-color2Hover;
+  }
+}
+
+.btn-secondary{
+  display: none;
+}
+
+@media (min-width: 500px) {
+  .btn-secondary{
+    display: block;
+    background-color: $base-color1;
+    width: 190px;
+    &:hover{
+      background-color: #EF5A00;
+    }
+  }
+}
+

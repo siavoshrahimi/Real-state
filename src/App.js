@@ -1,24 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React,{useState,useEffect} from 'react';
+import Layout from './component/Layout/Layout';
+import Home from "./container/Home/Home";
 
 function App() {
+const [scrollValue,setScrollValue] = useState(0);
+useEffect(() =>{
+    window.addEventListener('scroll',event =>{
+        let scrollTop = window.scrollY;
+        setScrollValue(scrollTop);
+    });
+    return () =>{
+        window.removeEventListener('scroll',vent =>{
+            let scrollTop = window.scrollY;
+            setScrollValue(scrollTop);
+            })
+
+    }
+},[]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        <Layout scrollVal={scrollValue}>
+            <Home/>
+        </Layout>
     </div>
   );
 }

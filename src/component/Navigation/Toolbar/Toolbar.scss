@@ -1,0 +1,74 @@
+@import "../../../assest/styles/variable";
+
+.header-wrapper{
+  height: 50px;
+  .toolbar{
+    display: flex;
+    position: fixed;
+    justify-content: start;
+    width: 100%;
+    height: 50px;
+    z-index: 2;
+    background: #fff;
+    box-shadow: 1px 2px 3px #eee;
+    align-items: center;
+    .drawer-toggle{
+      width: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      svg{
+        font-size: xx-large;
+        position: absolute;
+        color: $base-color1;
+        transition: all .3s ease-in;
+      }
+      .hidden{
+        opacity: 0;
+        visibility: hidden;
+      }
+      .appear{
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    .desktop-only{
+      display: none;
+    }
+    flex-wrap: wrap;
+    .line-break{
+      display: none;
+    }
+  }
+}
+
+
+
+@media (min-width:500px) {
+  .header-wrapper{
+    height: 175px;
+    .toolbar{
+      height: 175px;
+      position: relative;
+      justify-content: space-between;
+      margin: 50px 15% 0 ;
+      box-shadow: none;
+      align-items: initial;
+      width: auto;
+      .drawer-toggle{
+        display: none;
+      }
+      .desktop-only{
+        display: flex;
+        width: 100%;
+      }
+      .line-break{
+        display: block;
+        width: 100%;
+        border: 1px solid #eee;
+        height: 0;
+        margin-top: 27px;
+      }
+    }
+  }
+}
