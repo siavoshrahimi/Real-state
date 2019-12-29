@@ -4,6 +4,7 @@ A Real state Application built using React Js and ReduxJs. The application uses 
 <h4>What I used?</h4>
 <ul>
   <li>React 16 / Jsx pages</li>
+  <li>React Hooks</li>
   <li>React-Thunk</li>
 <li>Redux</li>
 <li>Axios</li>

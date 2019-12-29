@@ -23,11 +23,12 @@ const Home = props =>{
     const propertyData = useSelector(state => state.property.properties);
     const isSearched = useSelector(state => state.property.isSearched);
     const filteredData = useSelector(state => state.property.filterData);
-    //filter data
+    //state of normal inputs
     const [filter , setFilter] = useState({
         city:"All",
         room:"any"
     });
+    //state of range inputs
     const [ priceAreaRangeVal, setPriceAreaRangeVal] = useState({
         price:{min:550000,max:1000000},
         area:{min:100,max:700}
@@ -39,8 +40,8 @@ useEffect(() =>{
         dispatch(actionCreator.fetchPropertyData())
     },[]);
 
-    //set state
-    const filerChange = event =>{
+    //set state for normal inputs
+    const filterChange = event =>{
         const { target: { name, value } } = event;
             setFilter({
             ...filter,
@@ -49,14 +50,14 @@ useEffect(() =>{
 
 
     }
-
+    //filtering data
      const handlerFilterData = event =>{
         event.preventDefault();
 
         const filteredData = propertyData.filter(property => {
            return (
                (property.city === filter.city || filter.city === "All") &&
-               (property.bedrooms == filter.room ||filter.room === 'any') &&
+               (property.bedrooms === +filter.room ||filter.room === 'any') &&
                 property.price > priceAreaRangeVal.price.min &&
                 property.price < priceAreaRangeVal.price.max &&
                 property.sqm >   priceAreaRangeVal.area.min &&
@@ -104,7 +105,7 @@ useEffect(() =>{
             </div>
             <div className="container">
                 <Search data={propertyData}
-                        filterChanged={filerChange}
+                        filterChanged={filterChange}
                         filterData={handlerFilterData}
                         setPriceAreaRangeVal={setPriceAreaRangeVal}
                         priceAreaRangeVal={priceAreaRangeVal}

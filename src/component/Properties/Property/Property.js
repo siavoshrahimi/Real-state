@@ -6,8 +6,10 @@ import { LocalHotel,HotTub,LocationOn,Straighten } from '@material-ui/icons';
 
 const property = props =>{
     const {address,bathrooms,bedrooms,city,picture,price,sqm,latitude,longitude} = props.data;
-    //get modal props bolean true or false
-    //set handler for showing modal
+    //add . to price
+    let modifiedPrice = price.toString().split('');
+    modifiedPrice.splice(3,0,'.').join('');
+    //set map state and show on modal
     const setMap = () => {
         props.setMap({lat:latitude,lng:longitude});
         props.showModal();
@@ -17,7 +19,7 @@ const property = props =>{
             <div className="property-img">
                 <figure><img src={picture} alt={city}/></figure>
                 <div className="detail-on-img">
-                    <span><strong>{price}$</strong></span>
+                    <span><strong>{modifiedPrice}$</strong></span>
                     <span><LocationOn/>{address}</span>
                 </div>
             </div>
